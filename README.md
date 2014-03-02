@@ -72,7 +72,7 @@ You can specify list of target browsers to reduce amount of polyfills.
 ```js
 grunt.initConfig({
     autopolyfiller: {
-        for_all_browsers: {
+        latest_browsers_and_ie: {
             options: {
                 browsers: ['last 2 version', 'ie 8', 'ie 9']
             },
@@ -89,7 +89,7 @@ grunt.initConfig({
 ```js
 grunt.initConfig({
     autopolyfiller: {
-        for_all_browsers: {
+        for_default_autoprefixer_browsers: {
             options: {
                 browsers: require('autoprefixer').default
             },
