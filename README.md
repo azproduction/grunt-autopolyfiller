@@ -43,6 +43,14 @@ grunt.initConfig({
 Type: `Array`
 Default value: `[]` - all browsers
 
+#### options.include
+Type: `Array`
+Default value: `[]` - list of extra polyfills to add
+
+#### options.exclude
+Type: `Array`
+Default value: `[]` - list of polyfills to remove
+
 List of target browsers. Autopolyfiller uses Autoprefixer-style browsers format.
 See [Browsers format](https://github.com/ai/autoprefixer#browsers) for details.
 
@@ -92,6 +100,23 @@ grunt.initConfig({
         for_default_autoprefixer_browsers: {
             options: {
                 browsers: require('autoprefixer').default
+            },
+            files: {
+                'www/file_with_all_polyfills.js': ['your/js/**/*.js']
+            }
+        }
+    }
+});
+```
+
+#### Removing polyfills
+
+```js
+grunt.initConfig({
+    autopolyfiller: {
+        without_promise_polyfill: {
+            options: {
+                exclude: ['Promise']
             },
             files: {
                 'www/file_with_all_polyfills.js': ['your/js/**/*.js']
