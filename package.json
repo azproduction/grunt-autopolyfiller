@@ -1,7 +1,7 @@
 {
     "name": "grunt-autopolyfiller",
     "version": "1.1.0",
-    "description": "Autopolyfiller - Precise polyfills. Automatic and minimal polyfills for your code.",
+    "description": "Autopolyfiller plugin for Grunt.",
     "homepage": "https://github.com/azproduction/grunt-autopolyfiller",
     "repository": "git://github.com/azproduction/grunt-autopolyfiller.git",
     "bugs": "https://github.com/azproduction/grunt-autopolyfiller/issues",
