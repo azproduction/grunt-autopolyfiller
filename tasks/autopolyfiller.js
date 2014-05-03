@@ -15,12 +15,16 @@ module.exports = function (grunt) {
 
         // Default options
         var options = this.options({
-            browsers: []
+            browsers: [],
+            include: [],
+            exclude: []
         });
 
         // Iterate over all specified file groups.
         this.files.forEach(function (file) {
-            var polyfiller = autopolyfiller(options.browsers);
+            var polyfiller = autopolyfiller(options.browsers)
+                .include(options.include)
+                .exclude(options.exclude);
 
             file.src
                 .filter(function (filepath) {

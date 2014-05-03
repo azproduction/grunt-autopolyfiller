@@ -22,4 +22,23 @@ describe('grunt-autopolyfiller', function () {
         expect(polyfills).to.not.match(/String\.prototype\.trim/);
         expect(polyfills).to.match(/Promise/);
     });
+
+    it('includes extra polyfills', function () {
+        var polyfills = readFile('./tmp/include_polyfills.js');
+
+        expect(polyfills).to.match(/Array\.prototype\.map/);
+        expect(polyfills).to.match(/Object\.keys/);
+        expect(polyfills).to.match(/String\.prototype\.trim/);
+        expect(polyfills).to.match(/Promise/);
+        expect(polyfills).to.match(/Array\.prototype\.forEach/);
+    });
+
+    it('excludes optional polyfills', function () {
+        var polyfills = readFile('./tmp/exclude_polyfills.js');
+
+        expect(polyfills).to.match(/Array\.prototype\.map/);
+        expect(polyfills).to.match(/Object\.keys/);
+        expect(polyfills).to.not.match(/String\.prototype\.trim/);
+        expect(polyfills).to.not.match(/Promise/);
+    });
 });

@@ -49,6 +49,26 @@ module.exports = function (grunt) {
                         'test/fixtures/*.js'
                     ]
                 }
+            },
+            include_polyfills: {
+                options: {
+                    include: ['Array.prototype.forEach']
+                },
+                files: {
+                    'tmp/include_polyfills.js': [
+                        'test/fixtures/*.js'
+                    ]
+                }
+            },
+            exclude_polyfills: {
+                options: {
+                    exclude: ['Promise', 'String.prototype.trim']
+                },
+                files: {
+                    'tmp/exclude_polyfills.js': [
+                        'test/fixtures/*.js'
+                    ]
+                }
             }
         },
 
