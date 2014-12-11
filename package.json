@@ -26,7 +26,7 @@
         }
     ],
     "dependencies": {
-        "autopolyfiller": "1.1.x"
+        "autopolyfiller": "1.4.x"
     },
     "devDependencies": {
         "grunt-contrib-clean": "~0.4.0",
