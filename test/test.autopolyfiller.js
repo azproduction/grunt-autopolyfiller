@@ -41,4 +41,10 @@ describe('grunt-autopolyfiller', function () {
         expect(polyfills).to.not.match(/String\.prototype\.trim/);
         expect(polyfills).to.not.match(/Promise/);
     });
+
+    it('can use a custom parser', function () {
+        var polyfills = readFile('./tmp/custom_parser.js');
+
+        expect(polyfills).to.match(/Array\.prototype\.map/);
+    });
 });

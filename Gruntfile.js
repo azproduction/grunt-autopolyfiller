@@ -69,6 +69,17 @@ module.exports = function (grunt) {
                         'test/fixtures/*.js'
                     ]
                 }
+            },
+            custom_parser: {
+                options: {
+                    parser: 'esprima-fb',
+                    parser_options: {}
+                },
+                files: {
+                    'tmp/custom_parser.js': [
+                        'test/fixtures/custom_parser/*.js'
+                    ]
+                }
             }
         },
 

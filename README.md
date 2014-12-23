@@ -51,6 +51,14 @@ Default value: `[]` - list of extra polyfills to add
 Type: `Array`
 Default value: `[]` - list of polyfills to remove
 
+#### options.parser
+Type: `String`
+Default value: `null` - custom parser as a node module name
+
+#### options.parser_options
+Type: `Object`
+Default value: `{}` - custom parser options
+
 List of target browsers. Autopolyfiller uses Autoprefixer-style browsers format.
 See [Browsers format](https://github.com/ai/autoprefixer#browsers) for details.
 
