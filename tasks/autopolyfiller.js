@@ -17,7 +17,9 @@ module.exports = function (grunt) {
         var options = this.options({
             browsers: [],
             include: [],
-            exclude: []
+            exclude: [],
+            parser: null,
+            parser_options: {}
         });
 
         // Iterate over all specified file groups.
@@ -25,6 +27,10 @@ module.exports = function (grunt) {
             var polyfiller = autopolyfiller(options.browsers)
                 .include(options.include)
                 .exclude(options.exclude);
+
+            if (typeof options.parser === 'string') {
+                polyfiller.withParser(require(options.parser), options.parser_options);
+            }
 
             file.src
                 .filter(function (filepath) {
